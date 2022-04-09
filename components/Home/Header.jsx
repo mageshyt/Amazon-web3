@@ -5,7 +5,7 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import SignIn from './SignIn'
 const styles = {
   wrapper: 'bg-[#131921] flex items-center  justify-around  h-[60px] w-[100%]',
-  logoContainer: ' flex items-center h-[30px] space-x-4 ml-2 ',
+  logoContainer: ' cursor-pointer flex items-center h-[30px] space-x-4 ml-2 ',
   searchBar: `flex flex-1  sm:flex mx-[0.8rem] w-max-[520px] items-center rounded-[0.8rem]`,
   RightContent: 'flex w-[250px] space-x-6 items-center',
 }
@@ -15,14 +15,14 @@ const Header = () => {
       {/* Logo and address -->left */}
       <div className={styles.logoContainer}>
         {/* logo */}
-        <div>
+        <div className="hover:border">
           <img
             src="/images/logo.png"
-            className="h-[90px]  w-[90px] object-contain"
+            className="h-[55px]  w-[90px] object-contain"
           />
         </div>
         {/* Address */}
-        <div className="mb-3 hidden md:flex ">
+        <div className=" hidden p-2 hover:border md:flex ">
           <div className="flex items-center space-x-2">
             {/* location icon */}
             <GoLocation className="h-6 w-6 font-bold text-white" />
@@ -54,7 +54,7 @@ const Header = () => {
 const Order = () => {
   return (
     <div>
-      <div className="flex flex-col ">
+      <div className="flex cursor-pointer flex-col p-2 hover:border ">
         <span className="text-xs text-white">Return</span>
         <span className=" text-sm font-bold text-white">&Order</span>
       </div>
@@ -64,7 +64,7 @@ const Order = () => {
 
 const Cart = () => {
   return (
-    <div className="relative">
+    <div className="relative p-1 hover:border">
       <AiOutlineShoppingCart className="h-10 w-10 font-bold text-white" />
       <div className="center absolute top-0  right-[2px] h-4 w-4 animate-bounce rounded-full bg-white text-center text-sm text-gray-500">
         <span>0</span>

@@ -1,39 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { useMoralis } from 'react-moralis'
+import { UserAuthContext } from '../../context/AuthContext'
 
 const styles = {
-  wrapper: 'flex items-center flex-col',
+  wrapper: 'flex items-center p-1 cursor-pointer hover:border flex-col',
   title: 'text-xs text-white',
 }
 const SignIn = () => {
-  const {
-    authenticate,
-    isAuthenticated,
-    isAuthenticating,
-    user,
-    account,
-    logout,
-  } = useMoralis()
-  //   console.log('account', account)
-  const login = async () => {
-    console.log('login')
-    if (!isAuthenticated) {
-      await await authenticate({ signingMessage: 'Log in using Moralis' })
-        .then(function (user) {
-          console.log('logged in user:', user)
-          console.log(user?.get('ethAddress'))
-        })
-        .catch(function (error) {
-          console.log(error)
-        })
-    }
-  }
-
-  console.log({ isAuthenticated, user })
-  const logOut = async () => {
-    await logout()
-    console.log('logged out')
-  }
+  const { login, logOut, isAuthenticated } = useContext(UserAuthContext)
   return (
     <div>
       <div className={styles.wrapper}>
