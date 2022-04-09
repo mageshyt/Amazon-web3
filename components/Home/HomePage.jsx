@@ -3,7 +3,9 @@ import Header from './Header'
 const HomePage = () => {
   return (
     <div>
-      <Header />
+      <div>
+        <Header />
+      </div>
     </div>
   )
 }
