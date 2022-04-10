@@ -13,3 +13,4 @@ select {
     @apply flex items-center justify-center;
   }
 }
+@import '~antd/dist/antd.css';

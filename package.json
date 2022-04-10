@@ -7,6 +7,7 @@
   },
   "dependencies": {
     "@web3-react/core": "^6.1.9",
+    "antd": "^4.19.5",
     "moralis": "^1.5.9",
     "next": "latest",
     "react": "^17.0.2",

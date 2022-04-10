@@ -7,7 +7,7 @@ const styles = {
   wrapper: 'bg-[#131921] flex items-center  justify-around  h-[60px] w-[100%]',
   logoContainer: ' cursor-pointer flex items-center h-[30px] space-x-4 ml-2 ',
   searchBar: `flex flex-1  sm:flex mx-[0.8rem] w-max-[520px] items-center rounded-[0.8rem]`,
-  RightContent: 'flex w-[250px] space-x-6 items-center',
+  RightContent: ' hidden md:flex md:w-[250px] space-x-6 items-center ',
 }
 const Header = () => {
   return (
@@ -43,8 +43,10 @@ const Header = () => {
       <div className={styles.RightContent}>
         <SignIn />
         {/* Order */}
-        <Order />
-        {/* Cart */}
+        <div className=" hidden md:flex">
+          <Order />
+          {/* Cart */}
+        </div>
         <Cart />
       </div>
     </div>

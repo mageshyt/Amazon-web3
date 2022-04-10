@@ -1,9 +1,8 @@
 import React from 'react'
-import Header from './Header'
-import Categories from './Category'
 import Banner from './Banner'
 import Card from './Card'
 import { CardData } from '../../lib/cardsData'
+import Rating from '../Category and porduct/Rating'
 const HomePage = () => {
   return (
     <div className="">
