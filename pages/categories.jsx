@@ -9,7 +9,7 @@ import Rating from '../components/Category and porduct/Rating'
 import PriceRange from '../components/Category and porduct/PriceRange'
 import Results from '../components/Category and porduct/Results'
 const styles = {
-  filterBtn: 'bg-yellow-400 p-3 text-center ',
+  filterBtn: 'bg-yellow-400 p-3 text-center cursor-pointer ',
 }
 const Categories = () => {
   const { Footer, Sider, Content } = Layout
@@ -31,8 +31,8 @@ const Categories = () => {
       </div>
 
       <Layout>
-        <Sider width="340px" theme="light" className="p-7">
-          <div className="flex flex-col space-y-4">
+        <Sider width="340px" theme="light" className="hidden  p-7 md:block ">
+          <div className=" vertical space-y-4">
             <Rating rating={rating} setRating={setRating} />
             <PriceRange
               minPrice={minPrice}
@@ -44,8 +44,13 @@ const Categories = () => {
           </div>
         </Sider>
 
-        <Content theme="light" className="w-full bg-purple-400 p-[35px]">
-          <Results />
+        <Content theme="light" className="w-full  p-[35px]">
+          <Results
+            minPrice={minPrice}
+            maxPrice={maxPrice}
+            rating={rating}
+            category={category}
+          />
         </Content>
       </Layout>
     </div>

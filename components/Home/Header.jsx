@@ -3,6 +3,7 @@ import { GoLocation } from 'react-icons/go'
 import SearchBar from './SearchBar'
 import { AiOutlineShoppingCart } from 'react-icons/ai'
 import SignIn from './SignIn'
+import { useRouter } from 'next/router'
 const styles = {
   wrapper: 'bg-[#131921] flex items-center  justify-around  h-[60px] w-[100%]',
   logoContainer: ' cursor-pointer flex items-center h-[30px] space-x-4 ml-2 ',
@@ -10,12 +11,16 @@ const styles = {
   RightContent: ' hidden md:flex md:w-[250px] space-x-6 items-center ',
 }
 const Header = () => {
+  const router = useRouter()
   return (
     <div className={styles.wrapper}>
       {/* Logo and address -->left */}
       <div className={styles.logoContainer}>
         {/* logo */}
-        <div className="hover:border">
+        <div
+          onClick={() => router.push('/')}
+          className="cursor-pointer hover:border"
+        >
           <img
             src="/images/logo.png"
             className="h-[55px]  w-[90px] object-contain"

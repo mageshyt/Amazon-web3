@@ -5,15 +5,14 @@ import { CardData } from '../../lib/cardsData'
 import Rating from '../Category and porduct/Rating'
 const HomePage = () => {
   return (
-    <div className="">
+    <div className=" pb-10">
       <Banner />
-      <div>
-        {/* cards */}
-        <div className=" center absolute top-[320px]  mx-auto w-full  space-x-10">
-          {CardData.map((card, index) => {
-            return <Card key={index} {...card} />
-          })}
-        </div>
+
+      {/* cards */}
+      <div className="md:center flex flex-col items-center justify-center space-y-5 space-x-0 md:flex-row md:justify-around md:space-x-3">
+        {CardData.map((card, index) => {
+          return <Card key={index} {...card} />
+        })}
       </div>
     </div>
   )

@@ -5,7 +5,7 @@ import Card from './Card'
 import { CardData } from '../../lib/cardsData'
 const Banner = () => {
   return (
-    <div className="relative">
+    <div className="">
       <Carousel
         className="select-none"
         autoPlay={true}

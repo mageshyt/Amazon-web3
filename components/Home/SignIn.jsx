@@ -7,11 +7,38 @@ const styles = {
   title: 'text-xs text-white',
 }
 const SignIn = () => {
-  const { login, logOut, isAuthenticated } = useContext(UserAuthContext)
+  const {
+    authenticate,
+    isAuthenticated,
+    isAuthenticating,
+    user,
+    account,
+    logout,
+  } = useMoralis()
+  //   console.log('account', account)
+  const login = async () => {
+    console.log('login')
+    if (!isAuthenticated) {
+      await authenticate({ signingMessage: 'Log in using Moralis' })
+        .then(function (user) {
+          console.log('logged in user:', user)
+          console.log(user?.get('ethAddress'))
+        })
+        .catch(function (error) {
+          console.log(error)
+        })
+    }
+  }
+
+  const logOut = async () => {
+    await logout()
+    console.log('logged out')
+  }
   return (
     <div>
       <div className={styles.wrapper}>
-        <span className={styles.title}>Hello,Sign in</span>
+        {!!account && <span className={styles.title}>Hello,Sign in</span>}
+
         {/* Sign in button */}
         {!isAuthenticated ? (
           <button

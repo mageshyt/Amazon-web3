@@ -2,15 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #eee;
+}
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
   text-indent: 1px;
   text-overflow: '';
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
 @layer components {
   .center {
     @apply flex items-center justify-center;
   }
+  .vertical {
+    @apply flex flex-col;
+  }
 }
+.ant-btn-primary {
+  background-color: #001529;
+  border-color: #001529;
+  color: #fff;
+}
+.ant-btn-primary:hover {
+  background-color: #002548;
+  border-color: #013d75;
+  color: #fff;
+}
+
+@media (max-width: 900px) {
+  .product_card {
+    align-items: center;
+    justify-content: center;
+  }
+  .card_a {
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 50px;
+  }
+}
+
 @import '~antd/dist/antd.css';

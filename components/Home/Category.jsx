@@ -9,6 +9,8 @@ const style = {
 
 const Categories = [
   'books',
+  'Dictionaries',
+  'comics',
   'electronics',
   'clothing',
   'home',
@@ -33,7 +35,7 @@ const Category = () => {
               className="flex cursor-pointer items-center space-x-2 p-[2px] text-white hover:border-2"
               onClick={() => {
                 setCategory(item)
-                router.push(`/categories/`)
+                router.push(`/categories`)
               }}
             >
               <span className="text-md  font-medium">{item}</span>
